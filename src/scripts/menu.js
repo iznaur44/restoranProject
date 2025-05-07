@@ -128,3 +128,5 @@ menuItems.forEach(item => {
     menuContainer.appendChild(card);
   });
   
+
+  console.log()
