@@ -1,3 +1,3 @@
-export function chipBasket () {
+export function basketLoad () {
     
 }
