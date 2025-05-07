@@ -62,8 +62,11 @@ function createNavButton(text, id, isActive = false) {
   button.id = id; // Уникальный идентификатор
   button.className = 'nav-item' + (isActive ? ' active' : ''); // Классы
   button.setAttribute('aria-current', isActive ? 'page' : 'false'); // Для доступности
+  nav.appendChild('button');
   return button;
 }
+
+
 
 // Функция создания основного контейнера для контента
 function createContentContainer() {
