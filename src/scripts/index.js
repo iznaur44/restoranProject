@@ -7,7 +7,7 @@ import '../styles/menu.css';
 
 // Импортируем функции для загрузки меню и контактов из соответствующих файлов
 import { loadMenu } from "./menu";
-import { loadContact } from "./contact";
+
 
 // Основная функция инициализации приложения
 function init() {
@@ -32,9 +32,10 @@ function createHeader() {
 
   // Массив кнопок навигации
   const buttons = [
-    { text: "Home", id: "menu", active: true },
-    { text: "Menu", id: "menu" }, // Активная по умолчанию
-    { text: "Contact", id: "contact" }
+    { text: "Home", id: "home", active: true },
+    { text: "Menu", id: "menu" },
+    { text: "Your Basket", id: "basket" },
+    { text: "About Us", id: "about" }
   ];
 
   // Создаем кнопки навигации
@@ -48,7 +49,7 @@ function createHeader() {
   header.appendChild(nav);
   
   // Добавляем шапку в DOM
-  document.getElementById('content').appendChild(header);
+  document.querySelector('.content').appendChild(header);
   
   // Добавляем обработчик кликов по навигации
   nav.addEventListener('click', switchTab);
@@ -68,7 +69,7 @@ function createNavButton(text, id, isActive = false) {
 function createContentContainer() {
   const container = document.createElement('main');
   container.id = 'container'; // ID для контейнера
-  document.getElementById('content').appendChild(container);
+  document.querySelector('.content').appendChild(container);
 }
 
 // Функция переключения между вкладками
@@ -90,14 +91,17 @@ function switchTab(event) {
 
   // Загружаем соответствующий контент
   switch (button.id) {
+    case 'home':
+      loadHome(); // Загружаем меню
+      break;
     case 'menu':
       loadMenu(); // Загружаем меню
       break;
-    case 'contact':
-      loadContact(); // Загружаем контакты
+    case 'basket':
+      loadBasket(); // Загружаем контакты
       break;
     default:
-      loadMenu(); // По умолчанию загружаем меню
+      loadHome(); // По умолчанию загружаем меню
   }
 }
 
