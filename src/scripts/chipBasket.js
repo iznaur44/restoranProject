@@ -5,7 +5,7 @@ export function loadBasket () {
     
     let basket = [];
 
-    addButton.addEventListener('click', addToBasket());
+    
 
     class Item {
         constructor (name, price){
@@ -13,28 +13,30 @@ export function loadBasket () {
             this.price = price;
             this.quantity = 1;
         };
-    };
+    //      increaseQuantity(){
+    //         this.quantity++;
+    //     };
+    //     decreaseQuantity(){
+    //         this.quantity--;
+    //     };
+    //     getTotalPrice(){
+    //         return this.quantity*this.price;
+    //     };
+    // };
 
-    function addToBasket (name, price){
-        const existingItem = basket.find(item => item.name ===  name);
-        if (existingItem) {
-            existingItem.quantity++;
-        } 
-        else {
-            const newItem = new Item(name, price);
-            basket.push(newItem);
-        }
-    }
-    
-    
-   
-        increaseQuantity(){
-            this.quantity++;
-        };
-        decreaseQuantity(){
-            this.quantity--;
-        };
-        getTotalPrice(){
-            return this.quantity*this.price;
-        };
+       
+}
+
+
+// export function addToBasket (name, price){
+//         const existingItem = basket.find(item => item.name ===  name);
+//         if (existingItem) {
+//             existingItem.increaseQuantity();
+//         } 
+//         else {
+//             const newItem = new Item(name, price);
+//             basket.push(newItem);
+//         }
+//         renderBasket();
+//     
 }

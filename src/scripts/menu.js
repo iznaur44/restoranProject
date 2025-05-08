@@ -1,3 +1,4 @@
+import { addToBasket } from './chipBasket.js';
 export function loadMenu() {
     const container = document.getElementById('container');
     container.innerHTML = '';
@@ -127,6 +128,15 @@ export function loadMenu() {
       card.appendChild(addButton);
   
       menuContainer.appendChild(card);
+
+      const btn = content.querySelector('.add-btn');
+        btn.addEventListener('click', () => {
+        addToBasket(item);
+        });
     });
+
+    
   }
+  
+ 
   
