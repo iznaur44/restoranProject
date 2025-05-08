@@ -4,6 +4,7 @@ import '../styles/chipBasket.css';
 import '../styles/home.css';
 import '../styles/menu.css';
 
+
 import { loadMenu } from "./menu";
 import { loadBasket } from "./chipBasket";
 import { homePage } from './home';
