@@ -8,6 +8,7 @@ import { loadMenu } from "./menu";
 import { loadBasket } from "./chipBasket";
 import { homePage } from './home';
 import { aboutUs } from './aboutUs';
+
 // Основная функция инициализации приложения
 function init() {
   createHeader();
