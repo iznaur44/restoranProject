@@ -1,0 +1,24 @@
+#container-basket{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px;
+    gap: 50px;
+}
+
+.basket-title{
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+.basket-item{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 200px;
+    border: 1px solid black;
+}
