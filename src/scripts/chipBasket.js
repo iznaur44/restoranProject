@@ -42,45 +42,55 @@ export function loadBasketPage() {
 function renderBasket() {
     const container = document.getElementById('container');
     container.innerHTML = '';
-
+    const basketDiv = document.createElement('div');
+    basketDiv.className = 'basket-content';
+    container.appendChild(basketDiv);
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'title-card';
+    basketDiv.appendChild(titleDiv);
     const title = document.createElement('h2');
     title.textContent = '🛒 Ваша корзина';
     title.className = 'basket-title';
-    container.appendChild(title);
-
+    titleDiv.appendChild(title);
+    
+    const itemCard = document.createElement('div');
+    itemCard.className = 'item-card';
     if (basket.length === 0) {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = 'Корзина пуста.';
         emptyMessage.className = 'empty-basket';
-        container.appendChild(emptyMessage);
+        basketDiv.appendChild(emptyMessage);
         return;
     }
 
     basket.forEach(item => {
+        
         const itemDiv = document.createElement('div');
         itemDiv.className = 'basket-item';
+
         itemDiv.textContent = `${item.name} — ${item.quantity} шт. — ${item.getTotalPrice()}₽`;
 
         
         const decreaseBtn = document.createElement('button');
-        decreaseBtn.textContent = '➖уменьшить количество';
+        decreaseBtn.textContent = '➖ уменьшить количество';
         decreaseBtn.className = 'decrease-btn';
         decreaseBtn.addEventListener('click', () => decreaseItem(item.name));
 
         const increaseBtn = document.createElement('button');
-        increaseBtn.textContent = '➕добавить количество';
+        increaseBtn.textContent = '➕ добавить количество';
         increaseBtn.addEventListener('click', () => increaseItem(item.name));
 
         
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Убрать из корзины';
+        removeBtn.textContent = '🗑️ Убрать из корзины';
         removeBtn.className = 'remove-btn';
         removeBtn.addEventListener('click', () => removeFromBasket(item.name));
 
+        itemCard.appendChild(itemDiv);
+        itemDiv.appendChild(increaseBtn);
         itemDiv.appendChild(decreaseBtn);
         itemDiv.appendChild(removeBtn);
-        itemDiv.appendChild(increaseBtn);
-        container.appendChild(itemDiv);
+        basketDiv.appendChild(itemCard);
     });
 
     const total = basket.reduce((sum, item) => sum + item.getTotalPrice(), 0);
@@ -88,6 +98,11 @@ function renderBasket() {
     totalDiv.className = 'basket-total';
     totalDiv.textContent = `Итого: ${total}₽`;
     container.appendChild(totalDiv);
+
+    const buttonSubmit = document.createElement('button');
+    buttonSubmit.className = 'btn-submit';
+    buttonSubmit.textContent = 'Сделать заказ'
+    basketDiv.appendChild(buttonSubmit)
 }
 
 

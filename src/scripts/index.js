@@ -33,8 +33,8 @@ function createHeader() {
   const buttons = [
     { text: "Home", id: "home", active: true },
     { text: "Menu", id: "menu" },
-    { text: "Your Basket", id: "basket" },
-    { text: "About Us", id: "about" }
+    { text: "Your basket", id: "basket" },
+    { text: "About", id: "about" }
   ];
 
   buttons.forEach((btn) => {
