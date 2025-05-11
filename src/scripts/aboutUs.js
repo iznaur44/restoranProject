@@ -8,7 +8,7 @@ export function aboutUs () {
 
    const mainAbout = document.createElement("div");
    mainAbout.className = "sectionAbout";
-   document.body.appendChild(mainAbout);
+  
 
    // Блок "О нас"
    const aboutUp = document.createElement("div");
