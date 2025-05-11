@@ -137,3 +137,13 @@ input[type='file'] {
     padding-right: 15px;
     background-color: #e1ebeb;
 }
+
+.content{
+    min-width: 100%;
+    background-image: url(../img/mediamodifier_image\(1\).png);
+    background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left;
+        background-size: 1700px;
+        background-position-x: -650px;
+}
