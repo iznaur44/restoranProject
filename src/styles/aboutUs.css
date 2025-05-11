@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f8f3e2, #d6b99b);
+}
+
+.sectionAbout {
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f4ef;
+  box-sizing: border-box;
+}
+
+.infoBlock {
+  background: linear-gradient(135deg, #f8f3e2, #d6b99b);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.infoBlock h2 {
+  color: #5a3e2b;
+}

@@ -14,7 +14,7 @@ import { aboutUs } from './aboutUs';
 function init() {
   createHeader();
   createContentContainer();
-  aboutUs()
+ // aboutUs()
   homePage(); // По умолчанию загружаем главную страницу
 }
 
