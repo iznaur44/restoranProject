@@ -55,11 +55,12 @@ function renderBasket() {
     
     const itemCard = document.createElement('div');
     itemCard.className = 'item-card';
+    basketDiv.appendChild(itemCard);
     if (basket.length === 0) {
         const emptyMessage = document.createElement('p');
-        emptyMessage.textContent = 'Корзина пуста.';
+        emptyMessage.textContent = 'Корзина пуста. Добавьте товар в меню';
         emptyMessage.className = 'empty-basket';
-        basketDiv.appendChild(emptyMessage);
+        title.appendChild(emptyMessage);
         return;
     }
 
@@ -86,18 +87,19 @@ function renderBasket() {
         removeBtn.className = 'remove-btn';
         removeBtn.addEventListener('click', () => removeFromBasket(item.name));
 
+        
         itemCard.appendChild(itemDiv);
         itemDiv.appendChild(increaseBtn);
         itemDiv.appendChild(decreaseBtn);
         itemDiv.appendChild(removeBtn);
-        basketDiv.appendChild(itemCard);
+        
     });
 
     const total = basket.reduce((sum, item) => sum + item.getTotalPrice(), 0);
     const totalDiv = document.createElement('p');
     totalDiv.className = 'basket-total';
     totalDiv.textContent = `Итого: ${total}₽`;
-    container.appendChild(totalDiv);
+    basketDiv.appendChild(totalDiv);
 
     const buttonSubmit = document.createElement('button');
     buttonSubmit.className = 'btn-submit';
