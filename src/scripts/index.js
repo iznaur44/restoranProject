@@ -6,7 +6,7 @@ import '../styles/menu.css';
 
 
 import { loadMenu } from "./menu";
-import { loadBasket } from "./chipBasket";
+import { loadBasketPage } from "./chipBasket";
 import { homePage } from './home';
 import { aboutUs } from './aboutUs';
 
@@ -90,7 +90,7 @@ function switchTab(event) {
       loadMenu();
       break;
     case 'basket':
-      loadBasket();
+      loadBasketPage();
       break;
     case 'about':
     aboutUs();

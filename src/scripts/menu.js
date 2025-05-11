@@ -1,4 +1,6 @@
 
+import { addToBasket } from './chipBasket';
+
 export function loadMenu() {
     const container = document.getElementById('container');
     container.innerHTML = '';
@@ -116,6 +118,7 @@ export function loadMenu() {
   
       addButton.addEventListener('click', () => {
         console.log(`${item.name} добавлен в корзину ✅`);
+        addToBasket(item);
         addButton.textContent = 'Добавлено!';
         addButton.disabled = true;
         addButton.style.backgroundColor = '#ccc';
@@ -129,7 +132,6 @@ export function loadMenu() {
   
       menuContainer.appendChild(card);
 
-      
     });
 
     
